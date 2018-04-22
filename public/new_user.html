@@ -8,6 +8,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>New User</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="js/login.js"></script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" href="apple-icon.html">
@@ -29,41 +32,38 @@
 </head>
 <body>
     <!-- Right Panel -->
-    <div id="right-panel" class="right-panel">
+    <div id="right-panel" class="right-panel"ng-app="pathology" ng-controller="loginCtrl">
         <div class="content mt-3">
             <div class="animated fadeIn">
                 <div class="row">
                     <!--User create form-->
                   <div class="col-lg-6">
                     <div class="card">
-                      <div class="card-header">
-                        <strong>User Sign Up</strong>
-                      </div>
-                      <div class="card-body card-block">
-                        <form action="#" method="post" enctype="multipart/form-data" class="form-horizontal">
+                        <form ng-submit="createUser();">
+                            <div class="card-header">
+                                <strong>User Sign Up</strong>
+                            </div>
+                            <div class="card-body card-block">
 
-                          <div class="row form-group">
-                            <div class="col col-md-3"><label for="text-input" class=" form-control-label">Name</label></div>
-                            <div class="col-12 col-md-9"><input type="text" id="text-input" name="text-input" placeholder="Text" class="form-control"></div>
-                          </div>
-                          <div class="row form-group">
-                            <div class="col col-md-3"><label for="email-input" class=" form-control-label">Email</label></div>
-                            <div class="col-12 col-md-9"><input type="email" id="email-input" name="email-input" placeholder="Enter Email" class="form-control"><small class="help-block form-text">Please enter your email</small></div>
-                          </div>
-                          <div class="row form-group">
-                            <div class="col col-md-3"><label for="password-input" class=" form-control-label">Password</label></div>
-                            <div class="col-12 col-md-9"><input type="password" id="password-input" name="password-input" placeholder="Password" class="form-control"><small class="help-block form-text">Please enter a complex password</small></div>
-                          </div>
+                              <div class="row form-group">
+                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Name</label></div>
+                                <div class="col-12 col-md-9"><input ng-model="user.name" type="text" id="text-input" name="text-input" placeholder="Text" class="form-control" required></div>
+                              </div>
+                              <div class="row form-group">
+                                <div class="col col-md-3"><label for="email-input" class=" form-control-label">Email</label></div>
+                                <div class="col-12 col-md-9"><input ng-model="user.email" type="email" id="email-input" name="email-input" placeholder="Enter Email" class="form-control" required><small class="help-block form-text">Please enter your email</small></div>
+                              </div>
+                              <div class="row form-group">
+                                <div class="col col-md-3"><label for="password-input" class=" form-control-label">Password</label></div>
+                                <div class="col-12 col-md-9"><input ng-model="user.password" type="password" id="password-input" name="password-input" placeholder="Password" class="form-control" required><small class="help-block form-text">Please enter a complex password</small></div>
+                              </div>
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary btn-sm">
+                                  <i class="fa fa-dot-circle-o"></i> Submit
+                                </button>
+                            </div>
                         </form>
-                      </div>
-                      <div class="card-footer">
-                        <button type="submit" class="btn btn-primary btn-sm">
-                          <i class="fa fa-dot-circle-o"></i> Submit
-                        </button>
-                        <button type="reset" class="btn btn-danger btn-sm">
-                          <i class="fa fa-ban"></i> Reset
-                        </button>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -80,14 +80,5 @@
     <script src="assets/js/main.js"></script>
 
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-23581568-13');
-</script>
 </body>
 </html>
