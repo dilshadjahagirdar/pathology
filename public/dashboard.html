@@ -30,87 +30,52 @@
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
 
 </head>
-<body>
-        <!-- Left Panel -->
+<body ng-app="pathology" ng-controller="DashboardCtrl">
+      <aside id="left-panel" class="left-panel">
+          <div ng-include="'left_panel.html'"></div>
+      </aside>
+      <div id="right-panel" class="right-panel">
+      <div class="content mt-3">
+        <div class="animated fadeIn">
+          <div class="row">
 
-    <aside id="left-panel" class="left-panel">
-        <nav class="navbar navbar-expand-sm navbar-default">
-
-            <div class="navbar-header">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand">Pandhare Pathology</a>
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header col-xs-12">
+                  <div class="col-md-6" style="padding-left: 0px;">
+                    <strong class="card-title col-md-6">Patient overview</strong>
+                  </div>
+                  <a class="col-md-3" href="new_patient.html">
+                    <i class="fa fa-plus">New Patient</i>
+                  </a>
+                  <a class="col-md-3" href="new_report.html">
+                    <i class="fa fa-plus">New Report</i>
+                  </a>
+                </div>
+                <div class="card-body">
+                  <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                    <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Accupation</th>
+                      <th>Report status</th>
+                      <th>Report Date</th>
+                      <th>Paid</th>
+                      <th>Remaining</th>
+                    </tr>
+                    </thead>
+                  </table>
+                </div>
+              </div>
             </div>
 
-            <div id="main-menu" class="main-menu collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="dashboard.html">Dashboard </a>
-                    </li>
-                    <li>
-                        <a href="patients_all.html">Patients </a>
-                    </li>
-                    <li>
-                        <a href="reports_all.html">Reports </a>
-                    </li>
-                    <li>
-                        <a href="reports_all.html">Logout </a>
-                    </li>
-                </ul>
-            </div><!-- /.navbar-collapse -->
-        </nav>
-    </aside><!-- /#left-panel -->
 
-    <!-- Left Panel -->
-
-    <!-- Right Panel -->
-
-    <div id="right-panel" class="right-panel" ng-app="pathology" ng-controller="DashboardCtrl">
-
-        <div class="content mt-3">
-            <div class="animated fadeIn">
-                <div class="row">
-
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-header col-xs-12">
-                          <div class="col-md-6" style="padding-left: 0px;">
-                            <strong class="card-title col-md-6">Patient overview</strong>
-                          </div>
-                          <a class="col-md-3" href="new_patient.html">
-                            <i class="fa fa-plus">New Patient</i>
-                          </a>
-                          <a class="col-md-3" href="new_report.html">
-                            <i class="fa fa-plus">New Report</i>
-                          </a>
-                        </div>
-                        <div class="card-body">
-                          <table id="bootstrap-data-table" class="table table-striped table-bordered">
-                            <thead>
-                              <tr>
-                                <th>Name</th>
-                                <th>Accupation</th>
-                                <th>Report status</th>
-                                <th>Report Date</th>
-                                <th>Paid</th>
-                                <th>Remaining</th>
-                              </tr>
-                            </thead>
-                          </table>
-                        </div>
-                    </div>
-                </div>
+          </div>
+        </div><!-- .animated -->
+      </div><!-- .content -->
 
 
-                </div>
-            </div><!-- .animated -->
-        </div><!-- .content -->
-
-
-    </div><!-- /#right-panel -->
-
-    <!-- Right Panel -->
+    </div>
 
 
     <script src="assets/js/vendor/jquery-2.1.4.min.js"></script>
