@@ -5,3 +5,20 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+# -----------------------------------------------------------------------------------
+# Create admin user
+# ------------------------------------------------------------------------------------
+puts "User seed started"
+@user = User.new
+@user.name = "Shree"
+@user.email = "shree@gmail.com"
+@user.password = "12345678"
+if @user.save
+	puts "User seed completed"
+else
+	puts "user seed failed"
+end
+# -------------------------------------------------------------------------------------
+
