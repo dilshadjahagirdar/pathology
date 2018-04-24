@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180422104009) do
+ActiveRecord::Schema.define(version: 20180424095507) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "patients", force: :cascade do |t|
+    t.string "user_id"
     t.string "first_name"
     t.string "last_name"
     t.string "email"
@@ -24,6 +25,40 @@ ActiveRecord::Schema.define(version: 20180422104009) do
     t.string "gender"
     t.string "address"
     t.string "referred_by"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reports", force: :cascade do |t|
+    t.text "user_id"
+    t.text "patient_id"
+    t.text "test_ids"
+    t.text "cost"
+    t.text "deposite"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "results", force: :cascade do |t|
+    t.text "user_id"
+    t.text "patient_id"
+    t.text "report_id"
+    t.text "test_id"
+    t.text "results"
+    t.text "status"
+    t.text "unit"
+    t.text "cost"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tests", force: :cascade do |t|
+    t.text "user_id"
+    t.text "test_name"
+    t.text "minimum_count"
+    t.text "maximum_count"
+    t.text "unit"
+    t.text "cost"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

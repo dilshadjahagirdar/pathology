@@ -29,7 +29,7 @@
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
 
 </head>
-<body ng-app="pathology">
+<body ng-app="pathology" ng-controller="DashboardCtrl">
     <!-- Left Panel -->
     <aside id="left-panel" class="left-panel">
         <div ng-include="'left_panel.html'"></div>
@@ -43,58 +43,35 @@
                     <!--User create form-->
                   <div class="col-lg-8">
                     <div class="card">
-                      <div class="card-header">
-                        <strong>Create new report</strong>
-                      </div>
-                      <div class="card-body card-block">
-                        <form action="#" method="post" enctype="multipart/form-data" class="form-horizontal">
+                        <form ng-submit="createReport()" method="post" enctype="multipart/form-data" class="form-horizontal">
+                            <div class="card-header">
+                                <strong>Create new report</strong>
+                            </div>
+                            <div class="card-body card-block" ng-init="getAllPatients();getAllTests();">
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label for="select" class=" form-control-label">Patient Name</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <select class="form-control" ng-model="report.patient_id">
+                                            <option ng-repeat="patient in patients" value="{{patient.id}}">{{patient.first_name}} {{patient.last_name}} </option>
+                                        </select>
+                                    </div>
+                                </div>
 
-                          <div class="row form-group">
-                            <div class="col col-md-3"><label for="text-input" class=" form-control-label">Blood test</label></div>
-                            <div class="col-12 col-md-6"><input type="text" id="text-input" name="text-input" placeholder="Text" class="form-control"></div>
-                            <div class="col col-md-3"><label for="text-input" class=" form-control-label">500bc - 1500bc</label></div>
-                          </div>
-                            <div class="row form-group">
-                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Urine test</label></div>
-                                <div class="col-12 col-md-6"><input type="text" id="text-input" name="text-input" placeholder="Text" class="form-control"></div>
-                                                          <div class="col col-md-3"><label for="text-input" class=" form-control-label">500bc - 1500bc</label></div>
+                                <div ng-repeat="test in tests" class="row form-group">
+                                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">{{test.test_name}}</label></div>
+                                    <div class="col-12 col-md-6"><input ng-model="report.result[test.id]" type="text" id="text-input" name="text-input" placeholder="Result" class="form-control"></div>
+                                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">{{test.minimum_count}} {{test.unit}} - {{test.maximum_count}} {{test.unit}}</label></div>
+                                </div>
                             </div>
-                            <div class="row form-group">
-                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Test 3</label></div>
-                                <div class="col-12 col-md-6"><input type="text" id="text-input" name="text-input" placeholder="Text" class="form-control"></div>
-                                                          <div class="col col-md-3"><label for="text-input" class=" form-control-label">500bc - 1500bc</label></div>
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary btn-sm">
+                                    <i class="fa fa-dot-circle-o"></i> Submit
+                                </button>
+                                <button type="reset" class="btn btn-danger btn-sm">
+                                    <i class="fa fa-ban"></i> Reset
+                                </button>
                             </div>
-                            <div class="row form-group">
-                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Test4</label></div>
-                                <div class="col-12 col-md-6"><input type="text" id="text-input" name="text-input" placeholder="Text" class="form-control"></div>
-                                                          <div class="col col-md-3"><label for="text-input" class=" form-control-label">500bc - 1500bc</label></div>
-                            </div>
-                            <div class="row form-group">
-                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Test5</label></div>
-                                <div class="col-12 col-md-6"><input type="text" id="text-input" name="text-input" placeholder="Text" class="form-control"></div>
-                                                          <div class="col col-md-3"><label for="text-input" class=" form-control-label">500bc - 1500bc</label></div>
-                            </div>
-                            <div class="row form-group">
-                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Test6</label></div>
-                                <div class="col-12 col-md-6"><input type="text" id="text-input" name="text-input" placeholder="Text" class="form-control"></div>
-                                                          <div class="col col-md-3"><label for="text-input" class=" form-control-label">500bc - 1500bc</label></div>
-                            </div>
-                            <div class="row form-group">
-                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Test7</label></div>
-                                <div class="col-12 col-md-6"><input type="text" id="text-input" name="text-input" placeholder="Text" class="form-control"></div>
-                                                          <div class="col col-md-3"><label for="text-input" class=" form-control-label">500bc - 1500bc</label></div>
-                            </div>
-
                         </form>
-                      </div>
-                      <div class="card-footer">
-                        <button type="submit" class="btn btn-primary btn-sm">
-                          <i class="fa fa-dot-circle-o"></i> Submit
-                        </button>
-                        <button type="reset" class="btn btn-danger btn-sm">
-                          <i class="fa fa-ban"></i> Reset
-                        </button>
-                      </div>
                     </div>
                   </div>
                 </div>

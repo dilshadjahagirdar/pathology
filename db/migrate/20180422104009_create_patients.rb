@@ -1,7 +1,7 @@
 class CreatePatients < ActiveRecord::Migration[5.1]
   def change
     create_table :patients do |t|
-      t.column :user_id
+      t.column :user_id, :string
       t.column :first_name, :string
       t.column :last_name, :string
       t.column :email, :string

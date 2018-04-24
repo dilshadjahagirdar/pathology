@@ -30,77 +30,63 @@
 
 </head>
 <body  ng-app="pathology" ng-controller="DashboardCtrl">
-    <!-- Left Panel -->
-    <aside id="left-panel" class="left-panel">
-        <div ng-include="'left_panel.html'"></div>
-    </aside>
-    <!-- Left Panel -->
-    <!-- Right Panel -->
-    <div id="right-panel" class="right-panel">
-        <div class="content mt-3">
-            <div class="animated fadeIn">
-                <div class="row">
-                    <!--User create form-->
-                  <div class="col-lg-6">
-                    <div class="card">
-                        <form ng-submit="createPatient()" method="post" enctype="multipart/form-data" class="form-horizontal">
-                            <div class="card-header">
-                                <strong>Add new Test</strong>
-                            </div>
-                            <div class="card-body card-block">
-                                <div class="row form-group">
-                                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">First Name</label></div>
-                                    <div class="col-12 col-md-9"><input ng-model="patient.first_name" type="text" id="text-input" name="text-input" placeholder="First Name" class="form-control"></div>
-                                </div>
-                                <div class="row form-group">
-                                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Last Name</label></div>
-                                    <div class="col-12 col-md-9"><input ng-model="patient.last_name" type="text" id="text-input" name="text-input" placeholder="Last Name" class="form-control"></div>
-                                </div>
-                                <div class="row form-group">
-                                    <div class="col col-md-3"><label for="email-input" class=" form-control-label">Mobile No.</label></div>
-                                    <div class="col-12 col-md-9"><input ng-model="patient.phone" type="text" placeholder="Mobile number" class="form-control"></div>
-                                </div>
-                                <div class="row form-group">
-                                    <div class="col col-md-3"><label for="email-input" class=" form-control-label">Email</label></div>
-                                    <div class="col-12 col-md-9"><input ng-model="patient.email" type="email" id="email-input" name="email-input" placeholder="Enter Email" class="form-control"></div>
-                                </div>
-                                <div class="row form-group">
-                                    <div class="col col-md-3"><label for="select" class=" form-control-label">Gender</label></div>
-                                    <div class="col-12 col-md-9">
-                                        <select name="select" id="select" class="form-control" ng-model="patient.gender">
-                                            <option value="0">Please select</option>
-                                            <option value="1">Male</option>
-                                            <option value="2">Female</option>
-                                        </select>
+
+        <!-- Left Panel -->
+        <aside id="left-panel" class="left-panel">
+            <div ng-include="'left_panel.html'"></div>
+        </aside>
+        <!-- Left Panel -->
+        <!-- Right Panel -->
+        <div id="right-panel" class="right-panel">
+            <div class="content mt-3">
+                <div class="animated fadeIn">
+                    <div class="row">
+                        <!--User create form-->
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <form ng-submit="createTest()" method="post" enctype="multipart/form-data" class="form-horizontal">
+                                    <div class="card-header">
+                                        <strong>Add New Test</strong>
                                     </div>
-                                </div>
-                                <div class="row form-group">
-                                    <div class="col col-md-3"><label for="textarea-input" class=" form-control-label">Address</label></div>
-                                    <div class="col-12 col-md-9"><textarea ng-model="patient.address" name="textarea-input" id="textarea-input" rows="5" placeholder="Address" class="form-control"></textarea></div>
-                                </div>
-                                <div class="row form-group">
-                                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Doctor Name</label></div>
-                                    <div class="col-12 col-md-9"><input ng-model="patient.referred_by" type="text" id="text-input" name="text-input" placeholder="Doctor name" class="form-control"></div>
-                                </div>
+                                    <div class="card-body card-block">
+                                        <div class="row form-group">
+                                            <div class="col col-md-3"><label for="text-input" class=" form-control-label">Test Name</label></div>
+                                            <div class="col-12 col-md-9"><input ng-model="test.test_name" type="text" id="text-input" name="text-input" placeholder="Test Name" class="form-control"></div>
+                                        </div>
+                                        <div class="row form-group">
+                                            <div class="col col-md-3"><label for="text-input" class=" form-control-label">Minimum Count</label></div>
+                                            <div class="col-12 col-md-9"><input ng-model="test.minimum_count" type="number" id="text-input" name="text-input" placeholder="Min count" class="form-control"></div>
+                                        </div>
+                                        <div class="row form-group">
+                                            <div class="col col-md-3"><label for="email-input" class=" form-control-label">Maximum Count</label></div>
+                                            <div class="col-12 col-md-9"><input ng-model="test.maximum_count" type="number" placeholder="Max count" class="form-control"></div>
+                                        </div>
+                                        <div class="row form-group">
+                                            <div class="col col-md-3"><label class=" form-control-label">Test Unit</label></div>
+                                            <div class="col-12 col-md-9"><input ng-model="test.unit" type="text" id="email-input" name="email-input" placeholder="Test unit" class="form-control"></div>
+                                        </div>
+                                        <div class="row form-group">
+                                            <div class="col col-md-3"><label for="text-input" class=" form-control-label">Test cost</label></div>
+                                            <div class="col-12 col-md-9"><input ng-model="test.cost" type="text" id="text-input" name="text-input" placeholder="Test Cost" class="form-control"></div>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer">
+                                        <button type="submit" class="btn btn-primary btn-sm">
+                                            <i class="fa fa-dot-circle-o"></i> Create
+                                        </button>
+                                        <button type="reset" class="btn btn-danger btn-sm">
+                                            <i class="fa fa-ban"></i> Cancel
+                                        </button>
+                                    </div>
+                                </form>
                             </div>
-                            <div class="card-footer">
-                                <button type="submit" class="btn btn-primary btn-sm">
-                                    <i class="fa fa-dot-circle-o"></i> Create
-                                </button>
-                                <button type="reset" class="btn btn-danger btn-sm">
-                                    <i class="fa fa-ban"></i> Cancel
-                                </button>
-                            </div>
-                        </form>
+                        </div>
                     </div>
-                  </div>
-                </div>
-            </div><!-- .animated -->
-        </div><!-- .content -->
-    </div><!-- /#right-panel -->
+                </div><!-- .animated -->
+            </div><!-- .content -->
+        </div><!-- /#right-panel -->
 
-    <!-- Right Panel -->
-
+        <!-- Right Panel -->
 
     <script src="assets/js/vendor/jquery-2.1.4.min.js"></script>
     <script src="assets/js/popper.min.js"></script>

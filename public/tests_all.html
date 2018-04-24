@@ -41,7 +41,7 @@
 
     <div id="right-panel" class="right-panel">
 
-        <div class="content mt-3" ng-init="getAllPatients();">
+        <div class="content mt-3" ng-init="getAllTests();">
             <div class="animated fadeIn">
                 <div class="row">
 
@@ -60,22 +60,18 @@
                             <thead>
                               <tr>
                                 <th>id</th>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Phone</th>
-                                <th>Last visited</th>
-                                <th>Referred by</th>
+                                <th>Test Name</th>
+                                <th>Range</th>
+                                <th>cost</th>
                               </tr>
                             </thead>
                             <tbody>
-                                <tr ng-repeat="patient in patients | orderBy: 'updated_at':true
+                                <tr ng-repeat="test in tests | orderBy: 'updated_at':true
 ">
-                                    <td>{{patient.id}}</td>
-                                    <td>{{patient.first_name}} {{patient.last_name}}</td>
-                                    <td>{{patient.email}}</td>
-                                    <td>{{patient.phone}}</td>
-                                    <td>{{patient.updated_at}}</td>
-                                    <td>{{patient.referred_by}}</td>
+                                    <td>{{test.id}}</td>
+                                    <td>{{test.test_name}}</td>
+                                    <td>{{test.minimum_count}} {{test.unit}} - {{test.maximum_count}} {{test.unit}}</td>
+                                    <td>{{test.cost}} RS</td>
                                 </tr>
                             </tbody>
                           </table>
