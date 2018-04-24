@@ -30,9 +30,12 @@
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
 
 </head>
-<body>
+<body ng-app="pathology" ng-controller="loginCtrl">
+    <aside id="left-panel" class="left-panel">
+        <div ng-include="'left_panel.html'"></div>
+    </aside>
     <!-- Right Panel -->
-    <div id="right-panel" class="right-panel"ng-app="pathology" ng-controller="loginCtrl">
+    <div id="right-panel" class="right-panel">
         <div class="content mt-3">
             <div class="animated fadeIn">
                 <div class="row">
