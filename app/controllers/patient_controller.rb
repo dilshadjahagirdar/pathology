@@ -14,7 +14,7 @@ class PatientController < ApplicationController
   def create
     @patient = Patient.new(patient_params)
     if @patient.save
-      render :json=> {:patient => @patient, :redirect_to => "new_report.html",:msg=> "patient created successfully" },status: 200
+      render :json=> {:patient => @patient, :redirect_to => "patients_all.html",:msg=> "patient created successfully" },status: 200
     else
       render :json=> {:msg=> "patient created failed" },status: 500
     end
