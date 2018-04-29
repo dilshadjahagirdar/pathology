@@ -57,10 +57,101 @@
                                     </div>
                                 </div>
 
-                                <div ng-repeat="test in tests" class="row form-group">
-                                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">{{test.test_name}}</label></div>
-                                    <div class="col-12 col-md-6"><input ng-model="report.result[test.id]" type="text" id="text-input" name="text-input" placeholder="Result" class="form-control"></div>
-                                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">{{test.minimum_count}} {{test.unit}} - {{test.maximum_count}} {{test.unit}}</label></div>
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label">Tests </label></div>
+                                    <div class="col col-md-9">
+                                        <div class="form-check">
+                                            <div class="checkbox">
+                                                <label for="checkbox1" class="form-check-label ">
+                                                    <input type="checkbox" id="checkbox1" name="checkbox1" value="option1" class="form-check-input">Widal Slide Test
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label for="checkbox2" class="form-check-label ">
+                                                    <input type="checkbox" id="checkbox2" name="checkbox2" value="option2" class="form-check-input"> BSL FPP
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label for="checkbox3" class="form-check-label ">
+                                                    <input type="checkbox" id="checkbox3" name="checkbox3" value="option3" class="form-check-input"> Blood Sugar Level Test
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label for="checkbox3" class="form-check-label ">
+                                                    <input type="checkbox" id="checkbox3" name="checkbox3" value="option3" class="form-check-input"> Renal Function Test
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label for="checkbox3" class="form-check-label ">
+                                                    <input type="checkbox" id="checkbox3" name="checkbox3" value="option3" class="form-check-input"> Liver Function Test
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label for="checkbox3" class="form-check-label ">
+                                                    <input type="checkbox" id="checkbox3" name="checkbox3" value="option3" class="form-check-input"> Serum Electrolytes
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label for="checkbox3" class="form-check-label ">
+                                                    <input type="checkbox" id="checkbox3" name="checkbox3" value="option3" class="form-check-input"> HAEMOGRAM
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label for="checkbox3" class="form-check-label ">
+                                                    <input type="checkbox" id="checkbox3" name="checkbox3" value="option3" class="form-check-input"> CRP
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label for="checkbox3" class="form-check-label ">
+                                                    <input type="checkbox" id="checkbox3" name="checkbox3" value="option3" class="form-check-input"> HBSAG
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label for="checkbox3" class="form-check-label ">
+                                                    <input type="checkbox" id="checkbox3" name="checkbox3" value="option3" class="form-check-input"> DENGUE TEST
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label for="checkbox3" class="form-check-label ">
+                                                    <input type="checkbox" id="checkbox3" name="checkbox3" value="option3" class="form-check-input"> HIV
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label for="checkbox3" class="form-check-label ">
+                                                    <input type="checkbox" id="checkbox3" name="checkbox3" value="option3" class="form-check-input"> LIPID Profile
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label for="checkbox3" class="form-check-label ">
+                                                    <input type="checkbox" id="checkbox3" name="checkbox3" value="option3" class="form-check-input"> MALARIA ANTIGEN DETECTION
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label for="checkbox3" class="form-check-label ">
+                                                    <input type="checkbox" id="checkbox3" name="checkbox3" value="option3" class="form-check-input"> COAGULOGRAM
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label for="checkbox3" class="form-check-label ">
+                                                    <input type="checkbox" id="checkbox3" name="checkbox3" value="option3" class="form-check-input"> CARDIAC MARKER
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label for="checkbox3" class="form-check-label ">
+                                                    <input type="checkbox" id="checkbox3" name="checkbox3" value="option3" class="form-check-input"> URINE Analysis report
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label for="checkbox3" class="form-check-label ">
+                                                    <input type="checkbox" id="checkbox3" name="checkbox3" value="option3" class="form-check-input"> WEIL- FELIX TEST
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label for="textarea-input" class=" form-control-label">Description</label></div>
+                                    <div class="col-12 col-md-9"><textarea ng-model="patient.desciption" name="textarea-input" id="textarea-input" rows="5" placeholder="Description" class="form-control"></textarea></div>
                                 </div>
                             </div>
                             <div class="card-footer">
