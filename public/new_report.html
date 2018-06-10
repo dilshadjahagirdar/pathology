@@ -108,7 +108,7 @@
                                                             <label class=" form-control-label">Method</label>
                                                         </div>
                                                         <div class="col-md-9">
-                                                            <input ng-model="report.test.widal_slide_test.method" type="text" placeholder="Method" class="form-control">
+                                                            <input ng-model="report.test.widal_slide_test.widal_slide_test_method" type="text" placeholder="Method" class="form-control">
                                                         </div>
                                                     </div>
 
@@ -142,88 +142,260 @@
 
                                             <!-------------------------------------------->
 
+                                            <!--BSL FPP TEST-->
 
+                                            <div class="checkbox">
+                                                <label class="form-check-label">
+                                                    <input
+                                                            type="checkbox"
+                                                            class="form-check-input"
+                                                            ng-model="report.test.BSL_FPP_test.BSL_FPP"
+                                                            ng-true-value="1" ng-false-value="0"
+                                                    >BSL_FPP
+                                                </label>
+                                            </div>
+                                            <div ng-if="report.test.BSL_FPP_test.BSL_FPP" class="p-sm-2">
+                                                <div class="row form-group">
+                                                    <div class="col-md-12 p-sm-1">
+                                                        <div class="col-md-3">
+                                                            <label class=" form-control-label">Blood Sugar (Fasting)</label>
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <input ng-model="report.test.BSL_FPP_test.blood_sugar_fasting" type="text" placeholder="Salmonella_typhi_O" class="form-control">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-12 p-sm-1">
+                                                        <div class="col-md-3">
+                                                            <label class=" form-control-label">Blood Sugar (PP)</label>
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <input ng-model="report.test.BSL_FPP_test.blood_sugar_post_prandial" type="text" placeholder="Salmonella_typhi_H" class="form-control">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-12 p-sm-1">
+                                                        <div class="col-md-3">
+                                                            <label class=" form-control-label">Method</label>
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <input ng-model="report.test.BSL_FPP_test.BSL_FPP_method" type="text" placeholder="Widal Result" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-------------------------------------------->
+
+                                            <!--Blood sugar level TEST-->
 
                                             <div class="checkbox">
-                                                <label for="checkbox2" class="form-check-label ">
-                                                    <input type="checkbox" id="checkbox2" name="checkbox2" value="option2" class="form-check-input"> BSL FPP
+                                                <label class="form-check-label">
+                                                    <input
+                                                            type="checkbox"
+                                                            class="form-check-input"
+                                                            ng-model="report.test.blood_sugar_level_test.blood_sugar_level"
+                                                            ng-true-value="1" ng-false-value="0"
+                                                    >Blood Sugar Level
                                                 </label>
                                             </div>
+                                            <div ng-if="report.test.blood_sugar_level_test.blood_sugar_level" class="p-sm-2">
+                                                <div class="row form-group">
+                                                    <div class="col-md-12 p-sm-1">
+                                                        <div class="col-md-3">
+                                                            <label class=" form-control-label">Result</label>
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <input ng-model="report.test.blood_sugar_level_test.blood_sugar_level_result" type="text" placeholder="Salmonella_typhi_O" class="form-control">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-12 p-sm-1">
+                                                        <div class="col-md-3">
+                                                            <label class=" form-control-label">Method</label>
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <input ng-model="report.test.blood_sugar_level_test.blood_sugar_level_method" type="text" placeholder="Salmonella_typhi_H" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-------------------------------------------->
+
+                                            <!--Liver function TEST-->
+
                                             <div class="checkbox">
-                                                <label for="checkbox3" class="form-check-label ">
-                                                    <input type="checkbox" id="checkbox3" name="checkbox3" value="option3" class="form-check-input"> Blood Sugar Level Test
+                                                <label class="form-check-label">
+                                                    <input
+                                                            type="checkbox"
+                                                            class="form-check-input"
+                                                            ng-model="report.test.liver_function_test.liver_function"
+                                                            ng-true-value="1" ng-false-value="0"
+                                                    >Liver Function Test(RFT)
                                                 </label>
                                             </div>
+                                            <div ng-if="report.test.liver_function_test.liver_function" class="p-sm-2">
+                                                <div class="row form-group">
+                                                    <div class="col-md-12 p-sm-1">
+                                                        <div class="col-md-3">
+                                                            <label class=" form-control-label">Bilirubin Total</label>
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <input ng-model="report.test.liver_function_test.bilirubin_total" type="text" placeholder="Salmonella_typhi_O" class="form-control">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-12 p-sm-1">
+                                                        <div class="col-md-3">
+                                                            <label class=" form-control-label">Bilirubin Direct</label>
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <input ng-model="report.test.liver_function_test.bilirubin_direct" type="text" placeholder="Salmonella_typhi_H" class="form-control">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-12 p-sm-1">
+                                                        <div class="col-md-3">
+                                                            <label class=" form-control-label">Bilirubin Indirect</label>
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <input ng-model="report.test.liver_function_test.bilirubin_indirect" type="text" placeholder="Widal Result" class="form-control">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-12 p-sm-1">
+                                                        <div class="col-md-3">
+                                                            <label class=" form-control-label">SGPT</label>
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <input ng-model="report.test.liver_function_test.sgpt" type="text" placeholder="Method" class="form-control">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-12 p-sm-1">
+                                                        <div class="col-md-3">
+                                                            <label class=" form-control-label">SGOT</label>
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <input ng-model="report.test.liver_function_test.sgot" type="text" placeholder="Significant titre" class="form-control">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-12 p-sm-1">
+                                                        <div class="col-md-3">
+                                                            <label class=" form-control-label">Alkaline Phosphatase</label>
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <input ng-model="report.test.liver_function_test.alkaline_phosphatase" type="text" placeholder="Salmonella_typhi_H" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12 p-sm-1">
+                                                        <div class="col-md-3">
+                                                            <label class=" form-control-label">Total protein</label>
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <input ng-model="report.test.liver_function_test.total_protein" type="text" placeholder="Limitation of test" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12 p-sm-1">
+                                                        <div class="col-md-3">
+                                                            <label class=" form-control-label">Albumin</label>
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <input ng-model="report.test.liver_function_test.albumin" type="text" placeholder="Limitation of test" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12 p-sm-1">
+                                                        <div class="col-md-3">
+                                                            <label class=" form-control-label">Globulin</label>
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <input ng-model="report.test.liver_function_test.globulin" type="text" placeholder="Limitation of test" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!--------------------------------------------
+
+                                            <!------------------------RENAL TEST-------------------------->
                                             <div class="checkbox">
-                                                <label for="checkbox3" class="form-check-label ">
-                                                    <input type="checkbox" id="checkbox3" name="checkbox3" value="option3" class="form-check-input"> Renal Function Test
+                                                <label class="form-check-label">
+                                                    <input
+                                                            type="checkbox"
+                                                            class="form-check-input"
+                                                            ng-model="report.test.renal_function_test.renal_function"
+                                                            ng-true-value="1" ng-false-value="0"
+                                                    >Renal Function Test (RFT)
                                                 </label>
                                             </div>
+                                            <div ng-if="report.test.renal_function_test.renal_function" class="p-sm-2">
+                                                <div class="row form-group">
+                                                    <div class="col-md-12 p-sm-1">
+                                                        <div class="col-md-3">
+                                                            <label class=" form-control-label">Blood Urea Level</label>
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <input ng-model="report.test.renal_function_test.blood_urea_level" type="text" placeholder="Salmonella_typhi_O" class="form-control">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-12 p-sm-1">
+                                                        <div class="col-md-3">
+                                                            <label class=" form-control-label">Bun</label>
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <input ng-model="report.test.renal_function_test.bun" type="text" placeholder="Salmonella_typhi_H" class="form-control">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-12 p-sm-1">
+                                                        <div class="col-md-3">
+                                                            <label class=" form-control-label">SR. Creatinine</label>
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <input ng-model="report.test.renal_function_test.sr_creatinine" type="text" placeholder="Widal Result" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!---------------------------------------------------------------------->
+
+                                            <!------------------------Serum electrolytes-------------------------->
                                             <div class="checkbox">
-                                                <label for="checkbox3" class="form-check-label ">
-                                                    <input type="checkbox" id="checkbox3" name="checkbox3" value="option3" class="form-check-input"> Liver Function Test
+                                                <label class="form-check-label">
+                                                    <input
+                                                            type="checkbox"
+                                                            class="form-check-input"
+                                                            ng-model="report.test.serum_electrolytes_test.serum_electrolytes"
+                                                            ng-true-value="1" ng-false-value="0"
+                                                    >Serum Electrolytes
                                                 </label>
                                             </div>
-                                            <div class="checkbox">
-                                                <label for="checkbox3" class="form-check-label ">
-                                                    <input type="checkbox" id="checkbox3" name="checkbox3" value="option3" class="form-check-input"> Serum Electrolytes
-                                                </label>
+                                            <div ng-if="report.test.serum_electrolytes_test.serum_electrolytes" class="p-sm-2">
+                                                <div class="row form-group">
+                                                    <div class="col-md-12 p-sm-1">
+                                                        <div class="col-md-3">
+                                                            <label class=" form-control-label">SR. Sodium</label>
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <input ng-model="report.test.serum_electrolytes_test.sr_sodium" type="text" placeholder="Salmonella_typhi_O" class="form-control">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-12 p-sm-1">
+                                                        <div class="col-md-3">
+                                                            <label class=" form-control-label">SR. Pottasium</label>
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <input ng-model="report.test.serum_electrolytes_test.sr_pottasium" type="text" placeholder="Salmonella_typhi_H" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="checkbox">
-                                                <label for="checkbox3" class="form-check-label ">
-                                                    <input type="checkbox" id="checkbox3" name="checkbox3" value="option3" class="form-check-input"> HAEMOGRAM
-                                                </label>
-                                            </div>
-                                            <div class="checkbox">
-                                                <label for="checkbox3" class="form-check-label ">
-                                                    <input type="checkbox" id="checkbox3" name="checkbox3" value="option3" class="form-check-input"> CRP
-                                                </label>
-                                            </div>
-                                            <div class="checkbox">
-                                                <label for="checkbox3" class="form-check-label ">
-                                                    <input type="checkbox" id="checkbox3" name="checkbox3" value="option3" class="form-check-input"> HBSAG
-                                                </label>
-                                            </div>
-                                            <div class="checkbox">
-                                                <label for="checkbox3" class="form-check-label ">
-                                                    <input type="checkbox" id="checkbox3" name="checkbox3" value="option3" class="form-check-input"> DENGUE TEST
-                                                </label>
-                                            </div>
-                                            <div class="checkbox">
-                                                <label for="checkbox3" class="form-check-label ">
-                                                    <input type="checkbox" id="checkbox3" name="checkbox3" value="option3" class="form-check-input"> HIV
-                                                </label>
-                                            </div>
-                                            <div class="checkbox">
-                                                <label for="checkbox3" class="form-check-label ">
-                                                    <input type="checkbox" id="checkbox3" name="checkbox3" value="option3" class="form-check-input"> LIPID Profile
-                                                </label>
-                                            </div>
-                                            <div class="checkbox">
-                                                <label for="checkbox3" class="form-check-label ">
-                                                    <input type="checkbox" id="checkbox3" name="checkbox3" value="option3" class="form-check-input"> MALARIA ANTIGEN DETECTION
-                                                </label>
-                                            </div>
-                                            <div class="checkbox">
-                                                <label for="checkbox3" class="form-check-label ">
-                                                    <input type="checkbox" id="checkbox3" name="checkbox3" value="option3" class="form-check-input"> COAGULOGRAM
-                                                </label>
-                                            </div>
-                                            <div class="checkbox">
-                                                <label for="checkbox3" class="form-check-label ">
-                                                    <input type="checkbox" id="checkbox3" name="checkbox3" value="option3" class="form-check-input"> CARDIAC MARKER
-                                                </label>
-                                            </div>
-                                            <div class="checkbox">
-                                                <label for="checkbox3" class="form-check-label ">
-                                                    <input type="checkbox" id="checkbox3" name="checkbox3" value="option3" class="form-check-input"> URINE Analysis report
-                                                </label>
-                                            </div>
-                                            <div class="checkbox">
-                                                <label for="checkbox3" class="form-check-label ">
-                                                    <input type="checkbox" id="checkbox3" name="checkbox3" value="option3" class="form-check-input"> WEIL- FELIX TEST
-                                                </label>
-                                            </div>
+                                            <!---------------------------------------------------------------------->
+
                                         </div>
                                     </div>
                                 </div>

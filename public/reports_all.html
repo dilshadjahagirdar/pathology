@@ -70,9 +70,9 @@
                               </tr>
                             </thead>
                             <tbody>
-                                <tr ng-repeat="report in reports">
+                                <tr ng-repeat="report in reports" ng-click="showReport(report.id)">
                                     <td>{{report.id}}</td>
-                                    <td>{{report.date}}</td>
+                                    <td>{{report.date  | date : "dd/MM/y"}}</td>
                                     <td>{{report.patient_name}}</td>
                                     <td></td>
                                 </tr>

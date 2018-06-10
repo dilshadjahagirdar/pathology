@@ -33,101 +33,99 @@
 </head>
 <body ng-app="pathology" ng-controller="DashboardCtrl">
 
-    <aside id="left-panel" class="left-panel">
-        <div ng-include="'left_panel.html'"></div>
-    </aside>
+<aside id="left-panel" class="left-panel">
+    <div ng-include="'left_panel.html'"></div>
+</aside>
 
-    <!-- Right Panel -->
+<!-- Right Panel -->
 
-    <div id="right-panel" class="right-panel">
+<div id="right-panel" class="right-panel">
 
-        <div class="content mt-3" ng-init="getAllPatients();">
-            <div class="animated fadeIn">
-                <div class="row">
+    <div class="content mt-3" ng-init="getAllPatients();">
+        <div class="animated fadeIn">
+            <div class="row">
 
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                          <div class="col-md-9">
-                            <strong class="card-title">Patients details</strong>
-                          </div>
-                          <a class="col-md-3" href="new_patient.html">
-                            <i class="fa fa-plus">New Patient</i>
-                          </a>
+                            <div class="col-md-9">
+                                <strong class="card-title">Patients details</strong>
+                            </div>
+                            <a class="col-md-3" href="new_patient.html">
+                                <i class="fa fa-plus">New Patient</i>
+                            </a>
                         </div>
                         <div class="card-body">
-                          <table class="table table-striped table-bordered">
-                            <thead>
-                              <tr>
-                                <th>id</th>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Phone</th>
-                                <th>Last visited</th>
-                                <th>Referred by</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                                <tr ng-repeat="patient in patients | orderBy: 'updated_at':true
-">
+                            <table class="table table-striped table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>id</th>
+                                    <th>Name</th>
+                                    <th>Age</th>
+                                    <th>Phone</th>
+                                    <th>Last visited</th>
+                                    <th>Referred by</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr ng-repeat="patient in patients | orderBy: 'updated_at':true">
                                     <td>{{patient.id}}</td>
                                     <td>{{patient.first_name}} {{patient.last_name}}</td>
-                                    <td>{{patient.email}}</td>
+                                    <td>{{patient.age}}</td>
                                     <td>{{patient.phone}}</td>
-                                    <td>{{patient.updated_at}}</td>
+                                    <td>{{patient.updated_at | date : "dd/MM/y"}}</td>
                                     <td>{{patient.referred_by}}</td>
                                 </tr>
-                            </tbody>
-                          </table>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
 
 
-                </div>
-            </div><!-- .animated -->
-        </div><!-- .content -->
+            </div>
+        </div><!-- .animated -->
+    </div><!-- .content -->
 
 
-    </div><!-- /#right-panel -->
+</div><!-- /#right-panel -->
 
-    <!-- Right Panel -->
-
-
-    <script src="assets/js/vendor/jquery-2.1.4.min.js"></script>
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/plugins.js"></script>
-    <script src="assets/js/main.js"></script>
+<!-- Right Panel -->
 
 
-    <script src="assets/js/lib/data-table/datatables.min.js"></script>
-    <script src="assets/js/lib/data-table/dataTables.bootstrap.min.js"></script>
-    <script src="assets/js/lib/data-table/dataTables.buttons.min.js"></script>
-    <script src="assets/js/lib/data-table/buttons.bootstrap.min.js"></script>
-    <script src="assets/js/lib/data-table/jszip.min.js"></script>
-    <script src="assets/js/lib/data-table/pdfmake.min.js"></script>
-    <script src="assets/js/lib/data-table/vfs_fonts.js"></script>
-    <script src="assets/js/lib/data-table/buttons.html5.min.js"></script>
-    <script src="assets/js/lib/data-table/buttons.print.min.js"></script>
-    <script src="assets/js/lib/data-table/buttons.colVis.min.js"></script>
-    <script src="assets/js/lib/data-table/datatables-init.js"></script>
+<script src="assets/js/vendor/jquery-2.1.4.min.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/plugins.js"></script>
+<script src="assets/js/main.js"></script>
 
 
-    <script type="text/javascript">
-        $(document).ready(function() {
-          $('#bootstrap-data-table-export').DataTable();
-        } );
-    </script>
+<script src="assets/js/lib/data-table/datatables.min.js"></script>
+<script src="assets/js/lib/data-table/dataTables.bootstrap.min.js"></script>
+<script src="assets/js/lib/data-table/dataTables.buttons.min.js"></script>
+<script src="assets/js/lib/data-table/buttons.bootstrap.min.js"></script>
+<script src="assets/js/lib/data-table/jszip.min.js"></script>
+<script src="assets/js/lib/data-table/pdfmake.min.js"></script>
+<script src="assets/js/lib/data-table/vfs_fonts.js"></script>
+<script src="assets/js/lib/data-table/buttons.html5.min.js"></script>
+<script src="assets/js/lib/data-table/buttons.print.min.js"></script>
+<script src="assets/js/lib/data-table/buttons.colVis.min.js"></script>
+<script src="assets/js/lib/data-table/datatables-init.js"></script>
 
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#bootstrap-data-table-export').DataTable();
+    } );
+</script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'UA-23581568-13');
+    gtag('config', 'UA-23581568-13');
 </script>
 </body>
 

@@ -2,6 +2,9 @@ angular.module('pathology', []).controller('DashboardCtrl', function($scope,$htt
 
     console.log("In Dashboard Controller")
 
+    $scope.updated_at = new Date();
+    $scope.date = new Date();
+
     //=========================================================================================================
     //  PATIENT CONTROLLER
     //=========================================================================================================
@@ -14,6 +17,8 @@ angular.module('pathology', []).controller('DashboardCtrl', function($scope,$htt
     $scope.getAllPatients = function () {
         $http.get("/get_patients").then( function (response) {
             $scope.patients = response.data.patients;
+
+
         })
     }
     //=============================================================================================================
@@ -23,9 +28,18 @@ angular.module('pathology', []).controller('DashboardCtrl', function($scope,$htt
     //  REPORT CONTROLLER
     //=========================================================================================================
     $scope.createReport = function () {
-        console.log("========",$scope.report);
         $http.post('/new_report',$scope.report).then( function(response){
             window.location.assign(response.data.redirect_to)
+        })
+    }
+
+    $scope.showReport = function (report_id) {
+        $http.get('/get_report/'+report_id).then( function (response) {
+            $scope.report = response.data;
+            console.log("========",$scope.report);
+
+        },function (error) {
+            console.log("Error while getting detailed report = ",error);
         })
     }
 

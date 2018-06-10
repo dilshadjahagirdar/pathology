@@ -11,8 +11,18 @@ class ReportController < ApplicationController
     end
   end
 
+  def show
+    if @report = Report.find(params[:report_id])
+      @test = Test.find(@report.test_id)
+      render 'show', formats: [:json], handlers: [:jbuilder], status: 200
+    else
+      render :json => {:redirect_to => "/500.html", :msg => "Report with id '#{params[:report_id]}' not found."},status:500
+    end
+  end
+
   def create
     # Create test
+    binding.pry
     @test = Test.createTest(params[:test])
     # Create report
     @report = Report.new
