@@ -11,8 +11,8 @@ json.report do
       json.salmonella_typhi_O @test.salmonella_typhi_O
       json.salmonella_typhi_H @test.salmonella_typhi_H
       json.widal_result @test.widal_result
-      json.widal_slide_test_method @test.widal_test_method
-      json.significant_titre @testsignificant_titre
+      json.widal_test_method @test.widal_test_method
+      json.significant_titre @test.significant_titre
       json.note @test.note
       json.limitation_of_test @test.limitation_of_test
     end
