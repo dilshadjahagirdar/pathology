@@ -1,9 +1,9 @@
 class CreateReports < ActiveRecord::Migration[5.1]
   def change
     create_table :reports do |t|
-		t.text :user_id
-		t.text :patient_id
-		t.text :test_ids
+		t.integer :user_id
+		t.integer :patient_id
+		t.integer :test_id
 		t.text :cost
 		t.text :deposite
       	t.timestamps

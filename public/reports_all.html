@@ -43,7 +43,7 @@
 
     <!-- Right Panel -->
 
-    <div id="right-panel" class="right-panel">
+    <div id="right-panel" class="right-panel" ng-init="getAllReports()">
 
         <div class="content mt-3">
             <div class="animated fadeIn">
@@ -65,11 +65,18 @@
                               <tr>
                                 <th>Report No.</th>
                                 <th>Date</th>
-                                <th>WBC count</th>
-                                <th>RBC count</th>
+                                <th>Patient No.</th>
                                 <th>Download</th>
                               </tr>
                             </thead>
+                            <tbody>
+                                <tr ng-repeat="report in reports">
+                                    <td>{{report.id}}</td>
+                                    <td>{{report.date}}</td>
+                                    <td>{{report.patient_name}}</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
                           </table>
                         </div>
                     </div>

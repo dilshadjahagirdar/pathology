@@ -32,6 +32,7 @@ angular.module('pathology', []).controller('DashboardCtrl', function($scope,$htt
     $scope.getAllReports = function () {
         $http.get("/get_reports").then( function (response) {
             $scope.reports = response.data.reports;
+            console.log("=========",$scope.reports)
         })
     }
     //=============================================================================================================

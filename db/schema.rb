@@ -30,9 +30,9 @@ ActiveRecord::Schema.define(version: 20180424095507) do
   end
 
   create_table "reports", force: :cascade do |t|
-    t.text "user_id"
-    t.text "patient_id"
-    t.text "test_ids"
+    t.integer "user_id"
+    t.integer "patient_id"
+    t.integer "test_id"
     t.text "cost"
     t.text "deposite"
     t.datetime "created_at", null: false
@@ -53,14 +53,16 @@ ActiveRecord::Schema.define(version: 20180424095507) do
   end
 
   create_table "tests", force: :cascade do |t|
-    t.text "user_id"
+    t.integer "user_id"
     t.text "test_name"
-    t.text "minimum_count"
-    t.text "maximum_count"
-    t.text "unit"
-    t.text "cost"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text "widal_test"
+    t.text "salmonella_typhi_O"
+    t.text "salmonella_typhi_H"
+    t.text "widal_result"
+    t.text "method"
+    t.text "significant_titre"
+    t.text "note"
+    t.text "limitation_of_test"
   end
 
   create_table "users", force: :cascade do |t|

@@ -41,7 +41,7 @@
             <div class="animated fadeIn">
                 <div class="row">
                     <!--User create form-->
-                  <div class="col-lg-8">
+                  <div class="col-lg-12">
                     <div class="card">
                         <form ng-submit="createReport()" method="post" enctype="multipart/form-data" class="form-horizontal">
                             <div class="card-header">
@@ -61,11 +61,89 @@
                                     <div class="col col-md-3"><label class=" form-control-label">Tests </label></div>
                                     <div class="col col-md-9">
                                         <div class="form-check">
+
+                                            <!--WIDAL SLIDE TEST-->
+
                                             <div class="checkbox">
-                                                <label for="checkbox1" class="form-check-label ">
-                                                    <input type="checkbox" id="checkbox1" name="checkbox1" value="option1" class="form-check-input">Widal Slide Test
+                                                <label class="form-check-label">
+                                                    <input
+                                                        type="checkbox"
+                                                        class="form-check-input"
+                                                        ng-model="report.test.widal_slide_test.widal_test"
+                                                        ng-true-value="1" ng-false-value="0"
+                                                    >Widal Slide Test
                                                 </label>
                                             </div>
+                                            <div ng-if="report.test.widal_slide_test.widal_test" class="p-sm-2">
+                                                <div class="row form-group">
+                                                    <div class="col-md-12 p-sm-1">
+                                                        <div class="col-md-3">
+                                                            <label class=" form-control-label">Salmonella_typhi_O</label>
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <input ng-model="report.test.widal_slide_test.salmonella_typhi_O" type="text" placeholder="Salmonella_typhi_O" class="form-control">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-12 p-sm-1">
+                                                        <div class="col-md-3">
+                                                            <label class=" form-control-label">Salmonella_typhi_H</label>
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <input ng-model="report.test.widal_slide_test.salmonella_typhi_H" type="text" placeholder="Salmonella_typhi_H" class="form-control">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-12 p-sm-1">
+                                                        <div class="col-md-3">
+                                                            <label class=" form-control-label">Widal Result</label>
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <input ng-model="report.test.widal_slide_test.widal_result" type="text" placeholder="Widal Result" class="form-control">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-12 p-sm-1">
+                                                        <div class="col-md-3">
+                                                            <label class=" form-control-label">Method</label>
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <input ng-model="report.test.widal_slide_test.method" type="text" placeholder="Method" class="form-control">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-12 p-sm-1">
+                                                        <div class="col-md-3">
+                                                            <label class=" form-control-label">Significant Titre</label>
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <input ng-model="report.test.widal_slide_test.significant_titre" type="text" placeholder="Significant titre" class="form-control">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-12 p-sm-1">
+                                                        <div class="col-md-3">
+                                                            <label class=" form-control-label">Note</label>
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <input ng-model="report.test.widal_slide_test.note" type="text" placeholder="Salmonella_typhi_H" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12 p-sm-1">
+                                                        <div class="col-md-3">
+                                                            <label class=" form-control-label">Limitation of test</label>
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <input ng-model="report.test.widal_slide_test.limitation_of_test" type="text" placeholder="Limitation of test" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-------------------------------------------->
+
+
+
                                             <div class="checkbox">
                                                 <label for="checkbox2" class="form-check-label ">
                                                     <input type="checkbox" id="checkbox2" name="checkbox2" value="option2" class="form-check-input"> BSL FPP
