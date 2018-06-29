@@ -774,7 +774,7 @@ p:focus {
 a, button {
   text-decoration: none;
   outline: none !important;
-  color: #878787;
+  color: #FFFFFF;
   -webkit-transition: all 0.25s ease;
   -moz-transition: all 0.25s ease;
   -ms-transition: all 0.25s ease;
@@ -831,7 +831,7 @@ aside.left-panel {
   min-height: 100%;
   padding: 0 25px;
   vertical-align: top;
-  width: 280px;
+  width: 216px;
   transition: width 0.3s ease; }
 
 .navbar {
@@ -1513,13 +1513,14 @@ header .form-inline {
 /* Button Reset */
 .btn, .button {
   display: inline-block;
-  font-weight: 400;
+  font-weight: 600;
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
   transition: all .15s ease-in-out;
-  border-radius: 0;
-  cursor: pointer; }
+  border-radius: 4px;
+  cursor: pointer;
+  font-size:12px; }
 
 /* Icons */
 .icon-section {
@@ -2237,4 +2238,40 @@ header .form-inline {
         .right-panel .content #bootstrap-data-table_wrapper .table td, .right-panel .content #bootstrap-data-table_wrapper .table th {
           padding: 5px; } }
 
+.title{
+  text-transform: uppercase;
+  font-size:16px;
+  letter-spacing: 1.1px;
+}
+
+.path-table th{
+  font-size: 13px !important;
+  text-align: center !important;
+  text-transform: uppercase !important;
+  font-weight: 400 !important;
+  letter-spacing: 1.1px;
+}
+
+.path-card-body label {
+  font-size: 13px;
+  text-transform: uppercase !important;
+  font-weight: 400 !important;
+  letter-spacing: 1.1px;
+}
+
+.path-card-body select {
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.path-table .dataTables_empty, .dataTables_info{
+  font-size: 12px !important;
+  letter-spacing: 0.7px;
+}
+
+.path-card-body .pagination {
+    text-transform: uppercase !important;
+    font-size: 12px !important;
+
+}
 /*# sourceMappingURL=style.css.map */
