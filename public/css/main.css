@@ -446,14 +446,3 @@ iframe {
   transform: translateY(-50%);
   left: 0;
 }
-/* Nitin's CSS Start here */
-.path-form input{
-  height: 30px;
-  font-size: 14px;
-  padding: 5px;
-}
-
-.p-zero{
-  padding: 0px !important;
-}
-/* Nitin's CSS ENDS here */

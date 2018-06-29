@@ -2238,6 +2238,8 @@ header .form-inline {
         .right-panel .content #bootstrap-data-table_wrapper .table td, .right-panel .content #bootstrap-data-table_wrapper .table th {
           padding: 5px; } }
 
+
+/* Nitin's CSS Start here */
 .title{
   text-transform: uppercase;
   font-size:16px;
@@ -2274,4 +2276,20 @@ header .form-inline {
     font-size: 12px !important;
 
 }
-/*# sourceMappingURL=style.css.map */
+
+.path-form input{
+  height: 30px;
+  font-size: 14px;
+  padding: 5px;
+}
+
+.path-form label{
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+}
+
+.p-zero{
+  padding: 0px !important;
+}
+/* Nitin's CSS ENDS here */

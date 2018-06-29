@@ -48,15 +48,19 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <div class="col-md-9">
-                                <strong class="card-title">Patients details</strong>
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <span class="card-title title">Patient details</span>
+                                </div>
+                                <div class="col-md-2 text-right">
+                                    <button class="btn btn-info btn-outline btn-xs" type="button"
+                                    ><a href="new_patient.html">NEW PATIENT</a>
+                                    </button>
+                                </div>
                             </div>
-                            <a class="col-md-3" href="new_patient.html">
-                                <i class="fa fa-plus">New Patient</i>
-                            </a>
                         </div>
-                        <div class="card-body">
-                            <table class="table table-striped table-bordered">
+                        <div class="card-body path-card-body">
+                            <table class="table table-striped table-bordered path-table">
                                 <thead>
                                 <tr>
                                     <th>id</th>
@@ -69,12 +73,12 @@
                                 </thead>
                                 <tbody>
                                 <tr ng-repeat="patient in patients | orderBy: 'updated_at':true">
-                                    <td>{{patient.id}}</td>
-                                    <td>{{patient.first_name}} {{patient.last_name}}</td>
-                                    <td>{{patient.age}}</td>
-                                    <td>{{patient.phone}}</td>
-                                    <td>{{patient.updated_at | date : "dd/MM/y"}}</td>
-                                    <td>{{patient.referred_by}}</td>
+                                    <td ng-bind="patient.id"></td>
+                                    <td ng-bind="patient.first_name + patient.last_name"></td>
+                                    <td ng-bind="patient.age"></td>
+                                    <td ng-bind="patient.phone"></td>
+                                    <td ng-bind="patient.updated_at | date : 'dd/MM/y'"></td>
+                                    <td ng-bind="patient.referred_by"></td>
                                 </tr>
                                 </tbody>
                             </table>

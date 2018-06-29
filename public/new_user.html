@@ -42,9 +42,9 @@
                     <!--User create form-->
                   <div class="col-lg-6">
                     <div class="card">
-                        <form ng-submit="createUser();">
+                        <form ng-submit="createUser();" class="path-form">
                             <div class="card-header">
-                                <strong>User Sign Up</strong>
+                                <span class="card-title title">User Sign Up</span>
                             </div>
                             <div class="card-body card-block">
 
@@ -54,17 +54,15 @@
                               </div>
                               <div class="row form-group">
                                 <div class="col col-md-3"><label for="email-input" class=" form-control-label">Email</label></div>
-                                <div class="col-12 col-md-9"><input ng-model="user.email" type="email" id="email-input" name="email-input" placeholder="Enter Email" class="form-control" required><small class="help-block form-text">Please enter your email</small></div>
+                                <div class="col-12 col-md-9"><input ng-model="user.email" type="email" id="email-input" name="email-input" placeholder="Enter Email" class="form-control" required></div>
                               </div>
                               <div class="row form-group">
                                 <div class="col col-md-3"><label for="password-input" class=" form-control-label">Password</label></div>
-                                <div class="col-12 col-md-9"><input ng-model="user.password" type="password" id="password-input" name="password-input" placeholder="Password" class="form-control" required><small class="help-block form-text">Please enter a complex password</small></div>
+                                <div class="col-12 col-md-9"><input ng-model="user.password" type="password" id="password-input" name="password-input" placeholder="Password" class="form-control" required></div>
                               </div>
                             </div>
-                            <div class="card-footer">
-                                <button type="submit" class="btn btn-primary btn-sm">
-                                  <i class="fa fa-dot-circle-o"></i> Submit
-                                </button>
+                            <div class="card-footer text-right">
+                                <button class="btn btn-info btn-outline btn-xs" type="submit">SUBMIT</button>
                             </div>
                         </form>
                     </div>

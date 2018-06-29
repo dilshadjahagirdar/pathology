@@ -43,9 +43,9 @@
                     <!--User create form-->
                   <div class="col-lg-12">
                     <div class="card">
-                        <form ng-submit="createReport()" method="post" enctype="multipart/form-data" class="form-horizontal">
+                        <form ng-submit="createReport()" method="post" enctype="multipart/form-data" class="form-horizontal path-form">
                             <div class="card-header">
-                                <strong>Create new report</strong>
+                                <span class="card-title title">Create new report</span>
                             </div>
                             <div class="card-body card-block" ng-init="getAllPatients();getAllTests();">
                                 <div class="row form-group">
@@ -404,13 +404,9 @@
                                     <div class="col-12 col-md-9"><textarea ng-model="patient.desciption" name="textarea-input" id="textarea-input" rows="5" placeholder="Description" class="form-control"></textarea></div>
                                 </div>
                             </div>
-                            <div class="card-footer">
-                                <button type="submit" class="btn btn-primary btn-sm">
-                                    <i class="fa fa-dot-circle-o"></i> Submit
-                                </button>
-                                <button type="reset" class="btn btn-danger btn-sm">
-                                    <i class="fa fa-ban"></i> Reset
-                                </button>
+                            <div class="card-footer text-right">
+                                <button class="btn btn-info btn-outline btn-xs" type="submit">SUBMIT</button>
+                                <button class="btn btn-info btn-outline btn-xs" type="reset">RESET</button>
                             </div>
                         </form>
                     </div>
